@@ -14,5 +14,6 @@ public class Constants {
 
     public interface RequestType {
         short LOGIN = 1;
+        short REGISTER = 2;
     }
 }

@@ -20,13 +20,16 @@ public class ApiRequester extends Requester {
         this.mListener = listener;
     }
 
-    public boolean isRequested() {
-        return mCall.isExecuted();
-    }
 
     public void requestLogin(String email, String password) {
         mCall = ApiClient.getService().requestLogin(email, password);
         executeApiRequester(Constants.RequestType.LOGIN);
+    }
+
+
+    public void requestRegister(String name, String email, String mobile, String password) {
+        mCall = ApiClient.getService().requestRegister(name, email, mobile, password);
+        executeApiRequester(Constants.RequestType.REGISTER);
     }
 
 
@@ -94,6 +97,13 @@ public class ApiRequester extends Requester {
                 else mListener.onRequestFailed(TextUtils.isEmpty(response.getMessage()) ?
                         mContext.getString(R.string.no_result) : response.getMessage());
             }
+            if (mListener != null && requestType == Constants.RequestType.REGISTER) {
+                User user = new Gson().fromJson(gson.toJson(response.getData()), User.class);
+                if (user != null)
+                    ((RegisterRequestListener) mListener).onRegisterSuccess(user);
+                else mListener.onRequestFailed(TextUtils.isEmpty(response.getMessage()) ?
+                        mContext.getString(R.string.no_result) : response.getMessage());
+            }
         } else if (mListener != null)
             mListener.onRequestFailed(TextUtils.isEmpty(response.getMessage()) ?
                     mContext.getString(R.string.no_result) : response.getMessage());
@@ -116,5 +126,8 @@ public class ApiRequester extends Requester {
         void onLoginSuccess(User user);
     }
 
+    public interface RegisterRequestListener extends BaseApiRequesterListener {
+        void onRegisterSuccess(User user);
+    }
 
 }

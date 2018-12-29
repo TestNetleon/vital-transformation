@@ -12,6 +12,13 @@ public interface ApiInterface {
     Call<BaseResponse> requestLogin(@Field("email") String email,
                                     @Field("password") String password);
 
+   @FormUrlEncoded
+    @POST("index.php?c=users&f=register")
+    Call<BaseResponse> requestRegister(@Field("user_name") String userName,
+                                    @Field("user_email") String userEmail,
+                                    @Field("mobile") String mobile,
+                                    @Field("password") String password);
+
     /*@GET("enteredReport")
     Call<BaseResponse> getDashboardData();*/
 
