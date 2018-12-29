@@ -27,12 +27,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        apiRequester = new ApiRequester(this, this);
+
         ImageView imageView = findViewById(R.id.imgLogo);
         ViewGroup.LayoutParams params = imageView.getLayoutParams();
         params.height = (int) ((double) getScreenWidth() / 2);
         params.width = (int) ((double) getScreenWidth() / 2);
         imageView.setLayoutParams(params);
-
 
         findViewById(R.id.email_sign_in_button).setOnClickListener(this);
         newUser = findViewById(R.id.newUser);
@@ -41,10 +42,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         email = findViewById(R.id.email);
         mobile = findViewById(R.id.mobile);
         password = findViewById(R.id.password);
-
-
     }
-
 
     private void checkValidation() {
 
@@ -101,6 +99,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
         finish();
     }
+
     @Override
     public void onRegisterSuccess(User user) {
         if (apiRequester != null) {
@@ -116,7 +115,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             hideProgress();
             Toaster.showToast(this, message);
         }
-
     }
 
     @Override
