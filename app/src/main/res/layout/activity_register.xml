@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_background"
+        tools:context=".activity.RegisterActivity">
+
+    <ScrollView
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:scrollbars="none"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_vertical_margin"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/linAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vital"
+                        android:fontFamily="@font/caudex_bold"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transformation"
+                        android:fontFamily="@font/caudex_bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp"/>
+            </LinearLayout>
+
+            <ImageView
+                    android:id="@+id/imgLogo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/logo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linAppName"/>
+
+            <LinearLayout
+                    android:id="@+id/linForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgLogo">
+
+                <EditText
+                        android:id="@+id/yourName"
+                        style="@style/MyEditText"
+                        android:hint="@string/your_name"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        android:fontFamily="@font/poppins_light"
+                        tools:targetApi="o"/>
+
+                <EditText
+                        android:id="@+id/email"
+                        style="@style/MyEditText"
+                        android:hint="@string/email_address"
+                        android:importantForAutofill="no"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:inputType="textEmailAddress"
+                        android:fontFamily="@font/poppins_light"
+                        tools:targetApi="o"/>
+
+                <EditText
+                        android:id="@+id/mobile"
+                        style="@style/MyEditText"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:hint="@string/mobile_number"
+                        android:importantForAutofill="no"
+                        android:inputType="phone"
+                        android:fontFamily="@font/poppins_light"
+                        tools:targetApi="o"/>
+
+                <EditText
+                        android:id="@+id/password"
+                        style="@style/MyEditText"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:hint="@string/prompt_password"
+                        android:fontFamily="@font/poppins_light"
+                        android:importantForAutofill="no"
+                        android:inputType="textPassword"
+                        tools:targetApi="o"/>
+
+                <Button
+                        android:id="@+id/email_sign_in_button"
+                        style="@style/MyButtonSmall"
+                        android:fontFamily="@font/poppins_regular"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/register"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/newUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/already_have_an_account"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/poppins_light"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linForm"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

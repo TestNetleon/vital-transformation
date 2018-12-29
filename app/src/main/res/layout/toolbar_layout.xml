@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu"
+            android:padding="@dimen/text_view_padding"
+            android:contentDescription="@string/image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vital"
+                android:fontFamily="@font/caudex_bold"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transformation"
+                android:fontFamily="@font/caudex_bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"/>
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="@dimen/text_view_padding"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginLeft="4dp"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="4dp"
+            android:contentDescription="@string/image"/>
+
+    <ImageView
+            android:id="@+id/money"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_money_bag"/>
+</android.support.constraint.ConstraintLayout>

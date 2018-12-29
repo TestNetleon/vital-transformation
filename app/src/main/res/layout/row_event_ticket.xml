@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_view_padding"
+            app:cardCornerRadius="@dimen/corner_radius">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="@dimen/text_view_padding"
+                android:background="@drawable/rounded_rect_blue_border">
+
+            <TextView
+                    android:id="@+id/count"
+                    android:text="0"
+                    android:padding="@dimen/text_view_padding"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <ImageView
+                        android:id="@+id/btnAdd"
+                        android:contentDescription="@string/image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add"/>
+
+                <ImageView
+                        android:id="@+id/btnRemove"
+                        android:contentDescription="@string/image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/corner_radius"
+                        android:src="@drawable/ic_minus"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/title"
+                    android:text="Friday Night Dinner"
+                    android:padding="@dimen/text_view_padding"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="12sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/price"
+                    android:text="$0.00"
+                    android:padding="@dimen/text_view_padding"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

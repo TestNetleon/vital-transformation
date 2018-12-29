@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_weight="1" android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/btnDonate"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_money_bag"/>
+
+    <TextView
+            android:id="@+id/btnDonate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DONATE NOW"
+            android:textSize="10sp"
+            android:fontFamily="@font/poppins_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/yellow_button"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDonate"
+            android:layout_marginTop="@dimen/text_view_padding"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/subscriptionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Subscription"/>
+
+        <TextView
+                android:id="@+id/subscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/btnUpgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPGRADE NOW"
+                android:textSize="10sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white"
+                android:background="@drawable/theme_button"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
